@@ -19,90 +19,33 @@
       --gradient-main: linear-gradient(135deg, #ffe0ef 0%, #ff91af 50%, #ff3fa4 100%);
       --gradient-cta: linear-gradient(90deg,#ffb6e6,#ff3fa4 80%);
     }
-    html {
-      scroll-behavior: smooth;
-    }
     body {
       margin: 0;
       font-family: 'Montserrat', Arial, sans-serif;
       background: linear-gradient(120deg, #ffe0ef 0%, #ff91af 60%, #ff3fa4 100%);
       min-height: 100vh;
       color: var(--hot-pink);
-      overflow-x: hidden;
-      animation: bgmove 12s ease-in-out infinite alternate;
     }
-    @keyframes bgmove {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
-    }
-    /* --- Header --- */
     header {
       text-align: center;
       padding: 70px 20px 36px;
       background: var(--gradient-main);
       color: var(--white);
-      border-bottom-left-radius: 38px;
-      border-bottom-right-radius: 38px;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
     }
     .jiafei-avatar {
-      width: 110px;
-      height: 110px;
+      width: 110px; height: 110px;
       border-radius: 50%;
-      box-shadow: 0 0 0 8px #fff5, 0 8px 32px #ff3fa4cc;
-      object-fit: cover;
-      margin-bottom: 14px;
-      animation: avatarPop 1.2s cubic-bezier(.24,1.6,.32,1) both;
       border: 4px solid #ff91af;
       background: #fff;
-      transition: transform 0.23s;
-    }
-    .jiafei-avatar:hover {
-      transform: scale(1.08) rotate(-6deg);
-      box-shadow: 0 0 0 14px #ff91af66, 0 16px 40px #ff3fa4cc;
-    }
-    @keyframes avatarPop {
-      0% { opacity:0; transform:scale(0.7) rotate(-10deg);}
-      60% { opacity:1; transform:scale(1.1) rotate(5deg);}
-      100% { opacity:1; transform:scale(1) rotate(0);}
-    }
-    .glow {
-      text-shadow: var(--glow), var(--text-shadow);
-      filter: brightness(1.2);
+      margin-bottom: 14px;
     }
     .jiafei-title {
       font-family: 'Pacifico', cursive;
       font-size: 3.5rem;
       margin: 0 0 8px;
-      letter-spacing: 1.5px;
       color: var(--white);
-      animation: glowPulse 2.8s infinite alternate;
     }
-    @keyframes glowPulse {
-      from {
-        text-shadow: 0 0 8px #ff3fa4cc, 0 0 20px #ff91af80;
-        transform: scale(1) rotate(-1deg);
-      }
-      to {
-        text-shadow: 0 0 24px #ff3fa4cc, 0 0 80px #ff91af;
-        transform: scale(1.04) rotate(2deg);
-      }
-    }
-    .subtitle {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 15px;
-      color: #fff5fa;
-      letter-spacing: 2px;
-      text-shadow: var(--text-shadow);
-      animation: float 3s ease-in-out infinite alternate;
-    }
-    @keyframes float {
-      from { transform: translateY(0px);}
-      to { transform: translateY(-9px);}
-    }
+    .subtitle { font-size: 2rem; font-weight: 700; margin-bottom: 15px; color: #fff5fa; }
     .tagline {
       display: inline-block;
       background: var(--hot-pink);
@@ -110,217 +53,12 @@
       font-size: 1.2rem;
       padding: 8px 26px;
       border-radius: 999px;
-      box-shadow: 0 2px 18px #ffb5d2bb;
       margin-bottom: 5px;
       font-weight: 700;
-      letter-spacing: 1.8px;
-      animation: slay 1.6s infinite alternate;
-      position: relative;
-      z-index: 2;
     }
-    @keyframes slay {
-      0% { transform: scale(1) rotate(-2deg);}
-      100% { transform: scale(1.07) rotate(2deg);}
-    }
-    /* Sparkles */
-    .sparkle {
-      position: absolute;
-      pointer-events: none;
-      width: 28px;
-      height: 28px;
-      background: radial-gradient(circle, #fff7 60%, #ff91af33 100%);
-      border-radius: 50%;
-      animation: sparkleMove 3.5s linear infinite;
-      opacity: 0.8;
-      z-index: 1;
-    }
-    .sparkle:nth-child(1) { left: 7%; top: 30px; animation-delay: 0s;}
-    .sparkle:nth-child(2) { left: 92%; top: 60px; animation-delay: 0.8s;}
-    .sparkle:nth-child(3) { left: 80%; top: 0px; animation-delay: 1.9s;}
-    .sparkle:nth-child(4) { left: 20%; top: 70px; animation-delay: 2.2s;}
-    @keyframes sparkleMove {
-      0% { opacity:0.6; transform: scale(1) rotate(0deg);}
-      50% { opacity: 1; transform: scale(1.45) rotate(60deg);}
-      100% { opacity:0.6; transform: scale(1) rotate(0deg);}
-    }
-    /* --- Features section --- */
-    .container {
-      max-width: 1100px;
-      margin: 48px auto 0;
-      background: rgba(255,255,255,0.94);
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      padding: 40px 24px 32px;
-      position: relative;
-    }
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 38px;
-      margin-top: 25px;
-    }
-    .feature-card {
-      background: linear-gradient(135deg, #fff7fa 60%, #ffe0ef 100%);
-      border-radius: 22px;
-      box-shadow: 0 4px 24px #ffb5d266;
-      padding: 30px 19px 22px;
-      text-align: center;
-      border: 2.5px solid var(--pink);
-      cursor: pointer;
-      transition: 
-        transform 0.22s cubic-bezier(.22,1.5,.36,1.01),
-        box-shadow 0.22s,
-        border-color 0.22s;
-      position: relative;
-      overflow: hidden;
-    }
-    .feature-card:hover {
-      transform: translateY(-8px) scale(1.055) rotate(-1.5deg);
-      border-color: var(--hot-pink);
-      box-shadow: 0 8px 36px #ff3fa4bb, 0 0 22px #fff5;
-      z-index: 3;
-    }
-    .feature-icon {
-      font-size: 2.7rem;
-      margin-bottom: 13px;
-      color: var(--hot-pink);
-      text-shadow: 0 2px 12px #ffb5d299;
-      transition: text-shadow 0.22s, transform 0.22s;
-      animation: bounceIcon 2.4s infinite alternate;
-      filter: drop-shadow(0 0 6px #ff91af77);
-      display: inline-block;
-    }
-    .feature-card:hover .feature-icon {
-      text-shadow: 0 6px 28px #ff3fa4cc, 0 0 40px #ff91af99;
-      transform: scale(1.2) rotate(-6deg);
-      animation-play-state: paused;
-    }
-    .feature-icon.florins {
-      background: url('https://cdn.discordapp.com/attachments/1406700191616208906/1407757386214674452/IMG_7379.png?ex=68a743bb&is=68a5f23b&hm=1ba1be7c13c40e0a875c545de3fd6c2f141585649a137ad4ab64fbda2c1888cc&') center/contain no-repeat;
-      width: 54px;
-      height: 54px;
-      margin-bottom: 8px;
-      margin-top: 2px;
-      border-radius: 50%;
-      box-shadow: 0 0 10px #fff3, 0 4px 12px #ffb5d2bb;
-      display: inline-block;
-      animation: coinSpin 2.2s infinite linear;
-      filter: brightness(1.11) drop-shadow(0 0 8px #ff91af77);
-    }
-    @keyframes coinSpin {
-      0% { transform: rotateY(0deg);}
-      100% { transform: rotateY(360deg);}
-    }
-    @keyframes bounceIcon {
-      0% { transform: translateY(0);}
-      100% { transform: translateY(-8px) scale(1.08);}
-    }
-    .feature-title {
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: var(--hot-pink);
-      margin-bottom: 8px;
-      letter-spacing: 1.2px;
-      text-shadow: 0 2px 9px #ffb5d288;
-      position: relative;
-    }
-    .feature-desc {
-      color: #aa357a;
-      font-size: 1.08rem;
-      line-height: 1.66;
-      min-height: 110px;
-      font-weight: 500;
-      transition: color 0.2s;
-      position: relative;
-      z-index: 1;
-    }
-    .feature-card:hover .feature-desc {
-      color: #ff3fa4;
-    }
-    /* --- CTA --- */
-    .cta {
-      display: flex;
-      justify-content: center;
-      margin-top: 46px;
-      gap: 28px;
-      flex-wrap: wrap;
-    }
-    .cta-btn {
-      background: var(--gradient-cta);
-      color: var(--white);
-      border: none;
-      border-radius: 999px;
-      padding: 17px 44px;
-      font-size: 1.18rem;
-      font-weight: 800;
-      cursor: pointer;
-      box-shadow: 0 4px 24px #ff3fa477;
-      text-transform: uppercase;
-      letter-spacing: 2.1px;
-      transition: transform 0.16s, box-shadow 0.16s, background 0.22s;
-      outline: none;
-      position: relative;
-      z-index: 1;
-      overflow: hidden;
-      animation: ctaPulse 2.4s infinite alternate;
-    }
-    .cta-btn:after {
-      content: '';
-      position: absolute;
-      left: -60%;
-      top: 0;
-      width: 60%;
-      height: 110%;
-      background: linear-gradient(120deg, #fff9 20%, transparent 80%);
-      transform: skewX(-25deg);
-      opacity: 0.32;
-      transition: left 0.55s cubic-bezier(.19,1,.22,1);
-      pointer-events: none;
-    }
-    .cta-btn:hover {
-      transform: scale(1.07) translateY(-3px);
-      box-shadow: 0 8px 36px #ff91afbb;
-      background: linear-gradient(90deg,#ff3fa4 0,#ff91af 100%);
-    }
-    .cta-btn:hover:after {
-      left: 120%;
-    }
-    @keyframes ctaPulse {
-      0% { filter: brightness(1);}
-      100% { filter: brightness(1.15);}
-    }
-    /* --- Footer --- */
-    footer {
-      text-align: center;
-      color: #ff3fa4cc;
-      font-size: 1.13rem;
-      margin: 60px 0 22px;
-      font-family: 'Pacifico', cursive;
-      text-shadow: var(--text-shadow);
-      letter-spacing: 1.5px;
-      animation: float 3s ease-in-out infinite alternate;
-    }
-    /* --- Responsive --- */
-    @media (max-width: 700px) {
-      .container { padding: 14px 4px;}
-      .features { gap: 16px;}
-      .cta { gap: 14px;}
-      .jiafei-avatar { width: 74px; height: 74px;}
-      .jiafei-title { font-size: 2.1rem;}
-      .subtitle { font-size: 1.2rem;}
-    }
-
-    /* --- Scrollbar --- */
-    ::-webkit-scrollbar {
-      width: 8px;
-      background: #ffe0ef;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #ff91af;
-      border-radius: 12px;
-    }
-
-    /* --- Music Player --- */
+    .container { max-width: 1100px; margin: 48px auto; background: #fff; border-radius: 24px; padding: 40px 24px; }
+    footer { text-align: center; color: #ff3fa4cc; font-size: 1.13rem; margin: 60px 0 22px; font-family: 'Pacifico', cursive; }
+    /* Music Player */
     .music-player {
       position: fixed;
       bottom: 24px;
@@ -328,34 +66,25 @@
       transform: translateX(-50%);
       background: var(--light-pink);
       border-radius: 40px;
-      box-shadow: 0 2px 18px #ffb5d2cc;
-      padding: 12px 22px 12px 16px;
+      padding: 12px 22px;
       display: flex;
       align-items: center;
       z-index: 99;
       border: 2px solid #ff91af;
-      transition: box-shadow 0.3s;
       gap: 12px;
       min-width: 220px;
       max-width: 95vw;
       font-size: 1rem;
       color: #c04777;
       font-weight: 700;
-      user-select: none;
       cursor: pointer;
     }
-    .music-player:hover {
-      box-shadow: 0 8px 36px #ff3fa4bb;
-    }
     .music-player .music-art {
-      width: 38px;
-      height: 38px;
+      width: 38px; height: 38px;
       border-radius: 50%;
       margin-right: 12px;
       object-fit: cover;
       border: 2px solid #ff3fa4;
-      box-shadow: 0 0 8px #ffb5d2a0;
-      animation: avatarPop 0.9s both;
     }
     .music-player .music-title {
       flex: 1;
@@ -373,131 +102,43 @@
       font-size: 1.29rem;
       color: #ff3fa4;
       cursor: pointer;
-      margin-left: 6px;
-      margin-right: 2px;
-      transition: color 0.2s, transform 0.2s;
-    }
-    .music-player .music-btn:hover {
-      color: #c04777;
-      transform: scale(1.2);
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="sparkle"></div>
-    <div class="sparkle"></div>
-    <div class="sparkle"></div>
-    <div class="sparkle"></div>
-    <img class="jiafei-avatar" src="https://cdn.discordapp.com/attachments/1406700191616208906/1407757379432484954/IMG_7356.png?ex=68a743ba&is=68a5f23a&hm=e3047a33fb03892308dbae2ae9e6bd7bcce488712147243ae6d64a2e4ed1084d&" alt="Jiafei Bot Avatar" />
-    <div class="jiafei-title glow">Queen Of Jiafei Bot <span style="font-size:1.8rem;">👑</span></div>
-    <div class="subtitle glow">Jiafei Queen Flop Slay</div>
+    <img class="jiafei-avatar" src="https://cdn.discordapp.com/attachments/1406700191616208906/1407757379432484954/IMG_7356.png" alt="Jiafei Bot Avatar" />
+    <div class="jiafei-title">Queen Of Jiafei Bot 👑</div>
+    <div class="subtitle">Jiafei Queen Flop Slay</div>
     <div class="tagline">🌸 Sang chảnh, lầy lội, chất riêng Flop Nation!</div>
   </header>
   <main>
     <section class="container">
-      <div style="text-align:center;font-size:1.19rem;color:#bf4b8c;font-weight:700;text-shadow:0 1px 8px #ffb5d288;letter-spacing:1px;">
-        <span class="glow" style="font-size:1.32rem;">✨ Bot đa năng – Giải trí, AI, kinh tế, Tarot, lyrics, ảnh cực chất ✨</span>
-      </div>
-      <div class="features">
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fa-solid fa-microphone-lines"></i></div>
-          <div class="feature-title">Lyrics (Lời bài hát)</div>
-          <div class="feature-desc">
-            • Lấy lyrics từ Genius, bypass mọi chặn.<br>
-            • Hỗ trợ Kpop, Cpop, Jpop + phiên âm.<br>
-            • Lyrics dài? Tự động chia, không mất đoạn.<br>
-            <b>Flop? Không hề. Queen xử hết!</b>
-          </div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fa-solid fa-robot"></i></div>
-          <div class="feature-title">AI Chat</div>
-          <div class="feature-desc">
-            • Trò chuyện cực “queen flop” với AI.<br>
-            • Viết văn, thơ, đề thi, giải trí “lầy lội”.<br>
-            • Đúng chất Queen of Flop Nation!
-          </div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fa-solid fa-paint-brush"></i></div>
-          <div class="feature-title">AI Image</div>
-          <div class="feature-desc">
-            • Tạo ảnh AI style Jiafei hoặc nghệ thuật.<br>
-            • Ảnh đẹp, chất lượng cao.<br>
-            • Slay mọi ánh nhìn!
-          </div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-          <div class="feature-title">Tarot & Fun</div>
-          <div class="feature-desc">
-            • Tarot vui nhộn chuẩn Jiafei.<br>
-            • Mini-game, random fun quotes.<br>
-            • Iconic, không server nào flop!
-          </div>
-        </div>
-        <div class="feature-card">
-          <span class="feature-icon florins"></span>
-          <div class="feature-title">Kinh tế Florins 💸</div>
-          <div class="feature-desc">
-            • <img src="https://cdn.discordapp.com/attachments/1406700191616208906/1407757386214674452/IMG_7379.png?ex=68a743bb&is=68a5f23b&hm=1ba1be7c13c40e0a875c545de3fd6c2f141585649a137ad4ab64fbda2c1888cc&" alt="Florins Icon" style="width:1.3em;height:1.3em;vertical-align:middle;margin-right:3px;border-radius:50%;box-shadow:0 0 4px #ffb5d2;"/> Trồng cây, 🎣 câu cá, 🎰 cờ bạc.<br>
-            • Tích lũy Florins, thành rich queen.<br>
-            • Đua top giàu sang, slay server!
-          </div>
-        </div>
-      </div>
-      <div class="cta">
-        <a href="https://discord.com/api/oauth2/authorize?client_id=YOUR_BOT_ID&permissions=8&scope=bot%20applications.commands" target="_blank" class="cta-btn glow">
-          <i class="fa-brands fa-discord"></i> Mời bot vào server
-        </a>
-        <a href="https://discord.gg/YOUR_INVITE" target="_blank" class="cta-btn" style="background:var(--gradient-main)">
-          <i class="fa-solid fa-heart"></i> Tham gia cộng đồng Flop Nation
-        </a>
-      </div>
+      <h2>Bot hiện đang ngừng hoạt động</h2>
+      <p>Xin lỗi các flop nation 💔 Bot tạm thời ngừng để bảo trì / host lại. Vẫn sẽ comeback slay nhất!</p>
     </section>
   </main>
-  <!-- Music Player: Chỉnh src, title, art tùy ý -->
+  <!-- Music Player -->
   <div class="music-player" id="music-player">
-    <img class="music-art" src="https://cdn.discordapp.com/attachments/1406700191616208906/1407757379432484954/IMG_7356.png?ex=68a743ba&is=68a5f23a&hm=e3047a33fb03892308dbae2ae9e6bd7bcce488712147243ae6d64a2e4ed1084d&" alt="Bot Avatar" />
-    <span class="music-title" id="music-title">Jiafei Flop Slay Radio</span>
+    <img class="music-art" src="https://cdn.discordapp.com/attachments/1406700191616208906/1407757379432484954/IMG_7356.png" alt="Bot Avatar" />
+    <span class="music-title" id="music-title">Golden (Jiafei Version)</span>
     <button class="music-btn" id="music-toggle" title="Phát / Tạm dừng">
       <i id="music-icon" class="fa-solid fa-circle-play"></i>
     </button>
-    <audio id="music-audio" src="https://cdn.pixabay.com/audio/2023/03/13/audio_125b6f6b24.mp3" preload="auto"></audio>
+    <audio id="music-audio" src="https://dl.dropboxusercontent.com/scl/fi/8rjgsx8gxcumrz87cb026/y2mate-HUNTRX-Golden-Kpop-Demon-Hunters-Jiafei-remix.mp3?rlkey=h1eeasigi2jibp1jw1mnk2a6n&st=jypoqd2o&dl=1" preload="auto"></audio>
   </div>
   <footer>
     © 2025 Jiafei Queen Flop Slay. Made with 💖 by Flop Nation.
   </footer>
   <script>
-    // Music Player Logic
     const audio = document.getElementById('music-audio');
     const toggleBtn = document.getElementById('music-toggle');
     const icon = document.getElementById('music-icon');
     let isPlaying = false;
-    function toggleMusic() {
-      if (isPlaying) { audio.pause(); }
-      else { audio.play(); }
-    }
+    function toggleMusic() { if (isPlaying) audio.pause(); else audio.play(); }
     toggleBtn.onclick = toggleMusic;
-    audio.onplay = function() {
-      isPlaying = true;
-      icon.classList.remove('fa-circle-play');
-      icon.classList.add('fa-circle-pause');
-    }
-    audio.onpause = function() {
-      isPlaying = false;
-      icon.classList.remove('fa-circle-pause');
-      icon.classList.add('fa-circle-play');
-    }
-    // Optional: Autoplay on first user interaction (for modern browsers)
-    let hasInteracted = false;
-    document.addEventListener('click', () => {
-      if (!hasInteracted) {
-        hasInteracted = true;
-        audio.play().catch(()=>{});
-      }
-    }, {once:true});
+    audio.onplay = function() { isPlaying = true; icon.classList.replace('fa-circle-play','fa-circle-pause'); }
+    audio.onpause = function() { isPlaying = false; icon.classList.replace('fa-circle-pause','fa-circle-play'); }
   </script>
 </body>
 </html>
