@@ -3,103 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Queen Of Jiafei Discord Bot 👑</title>
+  <title>Queen Of Jiafei Bot 👑 - Ngừng hoạt động</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
   <style>
-    :root {
-      --pink: #ff91af;
-      --hot-pink: #ff3fa4;
-      --light-pink: #ffe0ef;
-      --white: #fff;
-      --shadow: 0 8px 36px 0 rgba(255, 63, 164, 0.16);
-      --border-radius: 24px;
-      --text-shadow: 0 2px 16px #ffb5d2bb;
-      --glow: 0 0 16px #ff3fa4cc, 0 0 40px #ff91af80;
-      --gradient-main: linear-gradient(135deg, #ffe0ef 0%, #ff91af 50%, #ff3fa4 100%);
-      --gradient-cta: linear-gradient(90deg,#ffb6e6,#ff3fa4 80%);
-    }
     body {
       margin: 0;
       font-family: 'Montserrat', Arial, sans-serif;
       background: linear-gradient(120deg, #ffe0ef 0%, #ff91af 60%, #ff3fa4 100%);
       min-height: 100vh;
-      color: var(--hot-pink);
+      color: #ff3fa4;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
     }
     header {
-      text-align: center;
-      padding: 70px 20px 36px;
-      background: var(--gradient-main);
-      color: var(--white);
+      padding: 20px;
     }
     .jiafei-avatar {
-      width: 110px; height: 110px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
-      border: 4px solid #ff91af;
-      background: #fff;
-      margin-bottom: 14px;
+      border: 5px solid #fff;
+      box-shadow: 0 0 20px #ff91af;
+      object-fit: cover;
     }
     .jiafei-title {
       font-family: 'Pacifico', cursive;
-      font-size: 3.5rem;
-      margin: 0 0 8px;
-      color: var(--white);
+      font-size: 2.6rem;
+      color: #fff;
+      margin: 15px 0 8px;
     }
-    .subtitle { font-size: 2rem; font-weight: 700; margin-bottom: 15px; color: #fff5fa; }
-    .tagline {
-      display: inline-block;
-      background: var(--hot-pink);
-      color: var(--white);
-      font-size: 1.2rem;
-      padding: 8px 26px;
-      border-radius: 999px;
-      margin-bottom: 5px;
-      font-weight: 700;
+    .subtitle {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #fff;
     }
-    .container { max-width: 1100px; margin: 48px auto; background: #fff; border-radius: 24px; padding: 40px 24px; }
-    footer { text-align: center; color: #ff3fa4cc; font-size: 1.13rem; margin: 60px 0 22px; font-family: 'Pacifico', cursive; }
-    /* Music Player */
-    .music-player {
-      position: fixed;
-      bottom: 24px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--light-pink);
-      border-radius: 40px;
-      padding: 12px 22px;
-      display: flex;
-      align-items: center;
-      z-index: 99;
-      border: 2px solid #ff91af;
-      gap: 12px;
-      min-width: 220px;
-      max-width: 95vw;
-      font-size: 1rem;
+    .notice-box {
+      background: #fff9;
+      padding: 20px 30px;
+      border-radius: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      box-shadow: 0 4px 18px #ff3fa488;
       color: #c04777;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      font-weight: 600;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: linear-gradient(90deg,#ffb6e6,#ff3fa4);
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 14px 36px;
+      font-size: 1.1rem;
       font-weight: 700;
       cursor: pointer;
+      box-shadow: 0 4px 16px #ff3fa477;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: transform 0.16s, box-shadow 0.16s;
+      text-decoration: none;
+      margin-top: 12px;
     }
-    .music-player .music-art {
-      width: 38px; height: 38px;
+    .cta-btn:hover {
+      transform: scale(1.06);
+      box-shadow: 0 6px 24px #ff91afbb;
+    }
+    footer {
+      text-align: center;
+      color: #fff;
+      font-size: 1rem;
+      margin-top: 40px;
+      opacity: 0.9;
+    }
+    /* Music Player */
+    .music-player {
+      margin-top: 30px;
+      background: #ffe0ef;
+      border-radius: 40px;
+      box-shadow: 0 4px 16px #ff3fa4aa;
+      padding: 12px 22px;
+      display: inline-flex;
+      align-items: center;
+      border: 2px solid #ff91af;
+      gap: 14px;
+      min-width: 260px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #c04777;
+    }
+    .music-art {
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      margin-right: 12px;
       object-fit: cover;
       border: 2px solid #ff3fa4;
+      box-shadow: 0 0 10px #ff91af88;
     }
-    .music-player .music-title {
+    .music-title {
       flex: 1;
       font-size: 1.08rem;
-      font-weight: 700;
-      color: #bb3679;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      padding-right: 10px;
     }
-    .music-player .music-btn {
+    .music-btn {
       background: none;
       border: none;
-      font-size: 1.29rem;
+      font-size: 1.3rem;
       color: #ff3fa4;
       cursor: pointer;
     }
@@ -107,38 +124,62 @@
 </head>
 <body>
   <header>
-    <img class="jiafei-avatar" src="https://cdn.discordapp.com/attachments/1406700191616208906/1407757379432484954/IMG_7356.png" alt="Jiafei Bot Avatar" />
+    <img class="jiafei-avatar" src="IMG_7356.png" alt="Jiafei Bot Avatar" />
     <div class="jiafei-title">Queen Of Jiafei Bot 👑</div>
-    <div class="subtitle">Jiafei Queen Flop Slay</div>
-    <div class="tagline">🌸 Sang chảnh, lầy lội, chất riêng Flop Nation!</div>
+    <div class="subtitle">Thông báo quan trọng</div>
   </header>
-  <main>
-    <section class="container">
-      <h2>Bot hiện đang ngừng hoạt động</h2>
-      <p>Xin lỗi các flop nation 💔 Bot tạm thời ngừng để bảo trì / host lại. Vẫn sẽ comeback slay nhất!</p>
-    </section>
-  </main>
+
+  <div class="notice-box">
+    Xin thông báo: <br><br>
+    <b>Queen Of Jiafei Bot</b> đã chính thức <span style="color:#ff3fa4">ngừng hoạt động</span> từ năm 2025. <br><br>
+    Cảm ơn mọi người trong <b>Flop Nation</b> đã luôn ủng hộ! 💖
+  </div>
+
+  <a href="https://discord.gg/eXqw8RvFG3" target="_blank" class="cta-btn">
+    <i class="fa-brands fa-discord"></i> Tham gia Discord
+  </a>
+
   <!-- Music Player -->
-  <div class="music-player" id="music-player">
-    <img class="music-art" src="https://cdn.discordapp.com/attachments/1406700191616208906/1407757379432484954/IMG_7356.png" alt="Bot Avatar" />
+  <div class="music-player">
+    <img class="music-art" src="IMG_7356.png" alt="Icon">
     <span class="music-title" id="music-title">Golden (Jiafei Version)</span>
-    <button class="music-btn" id="music-toggle" title="Phát / Tạm dừng">
+    <button class="music-btn" id="music-toggle">
       <i id="music-icon" class="fa-solid fa-circle-play"></i>
     </button>
-    <audio id="music-audio" src="https://dl.dropboxusercontent.com/scl/fi/8rjgsx8gxcumrz87cb026/y2mate-HUNTRX-Golden-Kpop-Demon-Hunters-Jiafei-remix.mp3?rlkey=h1eeasigi2jibp1jw1mnk2a6n&st=jypoqd2o&dl=1" preload="auto"></audio>
+    <audio id="music-audio" src="https://dl.dropboxusercontent.com/scl/fi/8rjgsx8gxcumrz87cb026/y2mate-HUNTRX-Golden-Kpop-Demon-Hunters-Jiafei-remix.mp3?rlkey=h1eeasigi2jibp1jw1mnk2a6n&st=jypoqd2o&dl=0" preload="auto"></audio>
   </div>
+
   <footer>
     © 2025 Jiafei Queen Flop Slay. Made with 💖 by Flop Nation.
   </footer>
+
   <script>
     const audio = document.getElementById('music-audio');
     const toggleBtn = document.getElementById('music-toggle');
     const icon = document.getElementById('music-icon');
     let isPlaying = false;
-    function toggleMusic() { if (isPlaying) audio.pause(); else audio.play(); }
+
+    function toggleMusic() {
+      if (isPlaying) {
+        audio.pause();
+      } else {
+        audio.play();
+      }
+    }
+
     toggleBtn.onclick = toggleMusic;
-    audio.onplay = function() { isPlaying = true; icon.classList.replace('fa-circle-play','fa-circle-pause'); }
-    audio.onpause = function() { isPlaying = false; icon.classList.replace('fa-circle-pause','fa-circle-play'); }
+
+    audio.onplay = function() {
+      isPlaying = true;
+      icon.classList.remove('fa-circle-play');
+      icon.classList.add('fa-circle-pause');
+    }
+
+    audio.onpause = function() {
+      isPlaying = false;
+      icon.classList.remove('fa-circle-pause');
+      icon.classList.add('fa-circle-play');
+    }
   </script>
 </body>
 </html>
